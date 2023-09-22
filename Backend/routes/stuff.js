@@ -1,24 +1,16 @@
-const express = require('express')
-const router = express.Router();
+const express = require('express');
+const Router = express.Router();
 
 const auth = require('../middleware/auth');
 const multer = require('../middleware/multer-config');
 
 const stuffCtrl = require('../controllers/stuff');
 
-router.post('/', auth, multer, stuffCtrl.createThing);
-
-//--------Modifier
-router.put('/:id', auth, multer, stuffCtrl.modifyThing);
-
-//--------Supprimer mon thing
-  router.delete('/:id', auth, stuffCtrl.deleteThing);
-
-//---------Recuperer un Objet
-router.get('/:id', auth, stuffCtrl.getOneThing);
-
-//---------recuperer tout les Objets
-router.get('/', auth, stuffCtrl.AllThings);
+Router.get('/', auth, stuffCtrl.getAllThings);            //---------recuperer tout les Objets
+Router.post('/', auth, multer, stuffCtrl.createThing);    //---------Envoie des données au serveur
+Router.get('/:id', auth, stuffCtrl.getOneThing);          //---------Recuperer un Objet
+Router.put('/:id', auth, multer, stuffCtrl.modifyThing);          //---------Modifier mon thing is here
+Router.delete('/:id', auth, stuffCtrl.deleteThing);       //---------Supprimer mon thing
 
 
-module.exports = router;
+module.exports = Router;
