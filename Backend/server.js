@@ -16,7 +16,7 @@ const ErrorHandler = error => {
     if (error.syscall !== 'listen') {
         throw error;
     }
-const address = Server.address();
+const address = server.address();
 const bind = typeof adress === 'String' ? 'pipe' + address : 'port:' + port;
 switch (error.code) {
     case 'EACCES':
@@ -32,11 +32,11 @@ switch (error.code) {
   }
 };
 
-const Server = http.CreateServer(app);
+const server = http.CreateServer(app);
 
-Server.on('error', errorHandler);
-Server.on('listening', () => {
-  const address = Server.address();
+server.on('error', errorHandler);
+server.on('listening', () => {
+  const address = server.address();
   const bind = typeof address === 'String' ? 'pipe ' + address : 'port ' + port;
   console.log('listening on ' + bind);
 });
