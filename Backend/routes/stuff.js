@@ -12,4 +12,4 @@ router.get('/:id', auth, stuffCtrl.getOneThing);
 router.put('/:id', auth, multer, stuffCtrl.modifyThing);
 router.delete('/:id', auth, stuffCtrl.deleteThing);
 
-module.exports = router;n
+module.exports = router;
