@@ -9,7 +9,7 @@ const user = require('./models/user');
 
 
 //--Logique pour ce connecter au mongodb
-mongoose.connect('mongodb+srv://standjan:QJRo8CW5yTjeosUq@cluster0-pme76.mongodb.net/test?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://standjan:Stnb05082023@cluster0.tusyhji.mongodb.net/test?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
