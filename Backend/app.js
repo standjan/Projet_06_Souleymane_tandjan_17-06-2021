@@ -1,11 +1,10 @@
 const express = require ('express');
-//const bodyParser = require('bodyParser');//
 const mongoose = require('mongoose');
 const path = require('path');
 
 const stuffRoutes = require('./routes/stuff');
 const userRoutes = require('./routes/user');
-const user = require('./models/user');
+const User = require('./models/User');
 
 
 //--Logique pour ce connecter au mongodb
@@ -24,9 +23,6 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
   });
-
-  // le bodyParser
-  //app.use(bodyPrser.json());//
 
   app.use('api/stuff', stuffRoutes);
   app.use('/api/auth', userRoutes);

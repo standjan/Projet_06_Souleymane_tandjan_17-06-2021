@@ -1,5 +1,4 @@
 // in controllers/stuff.js
-
 const Thing = require('../models/things');
 const fs = require('fs');
 
